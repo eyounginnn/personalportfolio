@@ -366,7 +366,7 @@ nav .material-symbols-outlined{
 }
 @media only screen and (max-width: 600px){
     #header{
-        background-image: url(images/me.jpeg);
+        background-image: url(images/background.png);
     }
     .header-text{
         margin-top: 100%;
@@ -388,6 +388,7 @@ nav .material-symbols-outlined{
         height: 100vh;
         padding-top: 50px;
         z-index: 2;
+        transition: right 0.5s;
     }
     nav ul li{
         display: block;
