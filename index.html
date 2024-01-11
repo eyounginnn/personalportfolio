@@ -177,9 +177,9 @@
                 <a href="images/Erica_Young-Cover_Letter.pdf" class="btn btn2"> Download Cover Letter Here! </a>
             </div>
             <div class="contact-right">
-                <form>
+                <form name="submit-to-google-sheet">
                     <input type="text" name="Name" placeholder="Your Name" required>
-                    <input type="email" name="e-mail" placeholder="Your Email" required>
+                    <input type="email" name="Email" placeholder="Your Email" required>
                     <textarea name="Message" rows="6" placeholder="Your Message" required></textarea>
                     <button class="btn btn2" type="submit">Submit</button>
                 </form>
@@ -219,5 +219,16 @@
         sidemenu.style.right = "-200px";
     }
 </script>
+<script>
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbykP8JpibNBWvFATIFWNtAfBKgCfqq_vNIS2Sxo8e66fe2JgaYusD52t90gdAT7DTMd/exec'
+    const form = document.forms['submit-to-google-sheet']
+  
+    form.addEventListener('submit', e => {
+      e.preventDefault()
+      fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+        .then(response => console.log('Success!', response))
+        .catch(error => console.error('Error!', error.message))
+    })
+  </script>
 </body>
 </html>
