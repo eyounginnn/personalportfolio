@@ -427,3 +427,9 @@ nav .material-symbols-outlined{
         font-size:14px;
     }
 }
+
+#msg{
+    color: #61b752;
+    display: block;
+    margin-top: -40px;
+}
